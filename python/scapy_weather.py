@@ -3,7 +3,7 @@ import requests
 import bs4
 import pprint
 import re
-from twilio.rest import Client
+import json
 import smtplib
 from email.mime.text import MIMEText
 from email.utils import formataddr
@@ -112,9 +112,11 @@ class send_email_of_weather():
         return ret
 
 if __name__ == '__main__':
-    #url顺序是姝姝南宁天气和博白天气，南宁天气，哈尔滨天气
+    #url顺序是博白天气，南宁天气，哈尔滨天气
     url = ["http://www.weather.com.cn/weather/101300902.shtml","http://www.weather.com.cn/weather/101300101.shtml","http://www.weather.com.cn/weather/101050101.shtml"]
-    receiver = [["2311077029@qq.com","1423237806@qq.com","2019607084@qq.com"],["1194157042@qq.com",'1602983878@qq.com'],["3295468820@qq.com"]]#'1602983878@qq.com'
+    receiver = [["2311077029@qq.com","1423237806@qq.com","2019607084@qq.com",'1602983878@qq.com'],
+                ["1194157042@qq.com"],
+                ["3295468820@qq.com","diqiaoer@163.com"]]#'1602983878@qq.com'
     subject = ["博白天气","南宁天气","哈尔滨天气"]
     #my_dict = {"给最最最可爱的姝姝":['1602983878@qq.com'] ,"博白天气":["2311077029@qq.com","2311077029@qq.com"],"南宁天气":["1194157042@qq.com"]}
     j = 0
@@ -123,6 +125,3 @@ if __name__ == '__main__':
         body = weather.body
         send_email = send_email_of_weather(receiver[j],subject[j],body)
         j += 1
-        #print(receiver[i]+subject[i])
-#send_message_to_phone(res)    
-#pprint.pprint(body)
