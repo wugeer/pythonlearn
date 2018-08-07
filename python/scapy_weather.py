@@ -114,9 +114,9 @@ class send_email_of_weather():
 if __name__ == '__main__':
     #url顺序是博白天气，南宁天气，哈尔滨天气
     url = ["http://www.weather.com.cn/weather/101300902.shtml","http://www.weather.com.cn/weather/101300101.shtml","http://www.weather.com.cn/weather/101050101.shtml"]
-    receiver = [["2311077029@qq.com","1423237806@qq.com","2019607084@qq.com",'1602983878@qq.com'],
-                ["1194157042@qq.com"],
-                ["3295468820@qq.com","diqiaoer@163.com"]]#'1602983878@qq.com'
+    receiver = [["2311077029@qq.com","1423237806@qq.com","2019607084@qq.com"],
+                ["1194157042@qq.com",'1602983878@qq.com'],
+                ["3295468820@qq.com"]]#'1602983878@qq.com'
     subject = ["博白天气","南宁天气","哈尔滨天气"]
     #my_dict = {"给最最最可爱的姝姝":['1602983878@qq.com'] ,"博白天气":["2311077029@qq.com","2311077029@qq.com"],"南宁天气":["1194157042@qq.com"]}
     j = 0
